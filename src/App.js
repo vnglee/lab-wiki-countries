@@ -13,14 +13,14 @@ function App() {
 
   const [countriesData, setCountriesData] = useState([])
   
-  useEffect(()=> {
-    setCountriesData(countries)
-  },[])
+  // useEffect(()=> {
+  //   setCountriesData(countries)
+  // },[])
   
   useEffect(() => {
     axios.get(" https://ih-countries-api.herokuapp.com/countries")
     .then(response => setCountriesData(response.data))
-
+    .catch(err => console.log(err))
   },[])
 
   return <div className="App">

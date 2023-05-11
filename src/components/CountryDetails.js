@@ -28,7 +28,7 @@ const CountryDetails = ({countries}) => {
         // if (info) {
         //     setCountry(info)
         // }
-    }, [countries])
+    }, [countries, alpha3Code])
 
   return (
     <div>
@@ -57,7 +57,7 @@ const CountryDetails = ({countries}) => {
                   <td>
                     <ul>
                         {country.borders.map((border) => {
-                            return  <li><Link to={border}>{getInfo(border).name.common}</Link></li>
+                            return  <li><Link to={`/${border}`}>{getInfo(border).name.common}</Link></li>
                         })}
                     </ul>
                   </td>
